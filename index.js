@@ -59,7 +59,7 @@ function writeToFile(fileName, data) {
   inquirer.prompt(data)
     .then((response) => {
       console.log(response)
-      fs.writeFile(fileName, data, (err) =>
+      fs.writeFile('./created-README/'+fileName, JSON.stringify(response, null, '\t'), (err) =>
         err ? console.error(err) : console.log('Success!')
       );
     })
